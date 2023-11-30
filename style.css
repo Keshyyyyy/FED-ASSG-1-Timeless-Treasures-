@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
     background: url(https://images.squarespace-cdn.com/content/v1/55f45174e4b0fb5d95b07f39/f2692796-38b3-473e-b3b6-f503a0668b28/Louis-Vuitton-Mens-2023-Ad-Campaign-Tyler-mitchell-00005.jpg) center/cover no-repeat fixed; /* Replace with the URL of your image */
-    font-family: sans-serif;
+    font-family: montserrat;
 }
 
 .navbar ul{
@@ -29,19 +29,27 @@ body{
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
+    transition: color 0.3s ease; /*the affect that shows the colour fade in when hovered over caused by the transition code*/
 }
 
 .navbar a:hover{
-    color:white;
+    color:aliceblue;
 }
 
-header {
+header { /*Timeless treasures header*/
     font-family: 'Times New Roman', Times, serif;
     color: black;
     font-size: 40px;
     text-transform: uppercase;
     text-align: center;
+    position: fixed;
+    top: 30px;
+    left: 50%; /*to make sure it's in the middle*/
+    transform: translateX(-50%);
+    width: 100%; /* To make it span the full width of the page*/
+    z-index: 1000; /* Optional: Set a higher z-index to ensure it appears above other elements */
 }
+
 
 .spacer{
     width: 200px;
@@ -60,3 +68,47 @@ button{
     top: 80%;
     transform: translate(-50%, -50%);
 }
+
+/* the rectangle of brands*/
+.rectangle {
+    width: 20%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);  
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-top-right-radius: 20px; /*adds the border radius to the top right of the div*/
+    border-bottom-right-radius: 20px; /*adds the border radius to the bottom right of the div*/
+    transition: right 0.5s ease;
+}
+/*the unordered list for brands*/
+.rectangle ul {
+    list-style: none;
+    padding: 5px;
+    margin: 0;
+}
+/* the affects for the menu extension brands*/
+.rectangle li {
+    font-size: 20px;
+    display: block; /* Set to 'block' to make list items appear vertically */
+    margin-bottom: 25%; /* Optional: Add some margin between list items */
+    margin-left: 50px;
+}
+.rectangle li:first-child { /*this is for the first list item in the list of rectangle*/
+    font-size: 25px;
+    margin-top: 5px; /*No margin for the x icon which will be used to exit the menu and go back to index.html*/
+    margin-left: 20px; /*so that the exit x icon doesnt look so close to the display*/
+}
+
+.rectangle a{
+    text-decoration: none;
+    color:black;
+    width: 100px;
+    transition: color 0.3s ease; /*affect of hover affect where the colour eases in*/
+}
+
+.rectangle a:hover{
+    color:aliceblue;
+}
+
+
