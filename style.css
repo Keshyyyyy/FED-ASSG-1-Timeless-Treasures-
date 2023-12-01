@@ -1,9 +1,11 @@
-body{ 
+body { 
     margin: 0;
     padding: 0;
-    background: url(https://images.squarespace-cdn.com/content/v1/55f45174e4b0fb5d95b07f39/f2692796-38b3-473e-b3b6-f503a0668b28/Louis-Vuitton-Mens-2023-Ad-Campaign-Tyler-mitchell-00005.jpg) center/cover no-repeat fixed; /* Replace with the URL of your image */
+    background: url(https://images.squarespace-cdn.com/content/v1/55f45174e4b0fb5d95b07f39/f2692796-38b3-473e-b3b6-f503a0668b28/Louis-Vuitton-Mens-2023-Ad-Campaign-Tyler-mitchell-00005.jpg) center/cover no-repeat fixed; 
     font-family: montserrat;
+    overflow-x: hidden; /*ensure vertical scrolling doesnt happen*/
 }
+
 
 .navbar ul{
     list-style: none;
@@ -47,7 +49,8 @@ header { /*Timeless treasures header*/
     left: 50%; /*to make sure it's in the middle*/
     transform: translateX(-50%);
     width: 100%; /* To make it span the full width of the page*/
-    z-index: 1000; /* Optional: Set a higher z-index to ensure it appears above other elements */
+    height:100px;
+    z-index: 1001; /*ensures the headers appears above other elements so it's not overshadowed main concern was the lv navbars*/
 }
 
 
@@ -73,13 +76,19 @@ button{
 .rectangle {
     width: 20%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.4);  
+    background-color: rgba(255, 255, 255, 0.55);  
     position: fixed;
     top: 0;
     left: 0;
     border-top-right-radius: 20px; /*adds the border radius to the top right of the div*/
     border-bottom-right-radius: 20px; /*adds the border radius to the bottom right of the div*/
-    transition: right 0.5s ease;
+    overflow-y:scroll; /*enables scrolling for items within this rectangle class in a vertical way becasue y*/
+    &::-webkit-scrollbar{ /*this removes the appearance of the scrollbar in webkit browsers which are chrome and sfafari*/
+        width:0.5em;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: transparent;
+    }
 }
 /*the unordered list for brands*/
 .rectangle ul {
@@ -91,8 +100,8 @@ button{
 .rectangle li {
     font-size: 20px;
     display: block; /* Set to 'block' to make list items appear vertically */
-    margin-bottom: 25%; /* Optional: Add some margin between list items */
-    margin-left: 50px;
+    margin-bottom: 20%; /* Optional: Add some margin between list items */
+    margin-left: 30px;
 }
 .rectangle li:first-child { /*this is for the first list item in the list of rectangle*/
     font-size: 25px;
@@ -111,4 +120,361 @@ button{
     color:aliceblue;
 }
 
+.navbarLV ul{  /*new class name for navbar in the lv product page mainly to change the colour of hovering*/
+    list-style: none;
+    background: rgba(255, 255, 255, 0); 
+    padding: 0;
+    margin: 0;
+    display:flex;
+    justify-content: space-around;
+    text-align:center;
+    background-color: white;
+    z-index: 1000; /*to make sure this appears*/
+}
+
+.navbarLV li{
+    display: inline-block;
+}
+
+.navbarLV a{
+    text-decoration: none;
+    color:black;
+    width: 100px;
+    display: block;
+    padding: 25px 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    transition: color 0.3s ease; /*the affect that shows the colour fade in when hovered over caused by the transition code*/
+}
+
+.navbarLV a:hover{
+    color:brown;
+}
+
+.itempagenavbar{
+    position:fixed;
+    width:100%;
+    background-color: white;
+    z-index: 1000; /*to make sure the contents appear above the background*/
+}
+
+.itempagenavbar ul{
+    list-style: none;
+    background: rgba(255, 255, 255, 0); 
+    padding: 0;
+    margin-top:65px ;
+    display:flex;
+    justify-content: space-around;
+    text-align:center;
+    border-bottom: 1px solid black; 
+}
+
+.itempagenavbar li{
+    display: inline-block;
+
+}
+
+.itempagenavbar a{
+    text-decoration: none;
+    color:black;
+    width: 100px;
+    display: block;
+    padding: 25px 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    transition: color 0.3s ease; /*the affect that shows the colour fade in when hovered over caused by the transition code*/
+}
+
+.itempagenavbar a:hover{
+    color:brown;
+}
+
+.itempagenavbar .arrow-down {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #000;
+    vertical-align: middle;
+    margin-left: 5px; 
+    transition:color 0.3s ease;
+}
+
+.itempagenavbar .with-arrow:hover .arrow-down {
+    border-top-color: brown;
+}
+
+.image-container {  /*a flex container that will arrange the child elements side by side which in this case are the image boxes*/
+    display: flex;
+    gap: 15%; /*the space between 2 products is 15% of the screen*/
+}
+.image-box {
+    margin-top: 77px;
+    width: 350px;
+    height: 350px;
+    border: 2px solid rgba(255, 255, 255, 0);
+    overflow: hidden;
+    flex: 0 0 auto; /*to prevent flex items from growing or shrinking in a flex container*/
+}
+
+.image-box img {
+    width: 95%;
+    height: 95%;
+    object-fit: cover; /* Maintain aspect ratio and cover the entire box */
+    border:2px;
+    transition: transform 0.3s ease; /* Add a smooth transition effect on hover */
+}
+
+.image-box:hover img {
+    transform: scale(1.1); /* Zoom in slightly on hover */
+}
+
+.image-description {
+    position: absolute;
+    bottom: 110px;
+    left: 50%;
+    transform: translateX(-88%);
+    background-color: rgba(255, 255, 255, 0.0); /* Background color for better readability */
+    padding: 1px;
+    font-size: 14px;
+    color: black;
+    width: 100%;
+    text-align: center;
+}
+
+.image-box1 {
+    margin-top: 75px;
+    width: 350px;
+    height: 350px;
+    border: 2px solid rgba(255, 255, 255, 0);
+    overflow: hidden;
+    flex: 0 0 auto; /*to prevent flex items from growing or shrinking in a flex container*/
+}
+
+.image-box1 img {
+    width: 95%;
+    height: 90%;
+    object-fit: cover; /* Maintain aspect ratio and cover the entire box */
+    border:0px;
+    transition: transform 0.3s ease; /* Add a smooth transition effect on hover */
+}
+
+.image-box1:hover img {
+    transform: scale(1.1); /* Zoom in slightly on hover */
+}
+
+.image-description1 {
+    position: absolute;
+    bottom: 110px;
+    left: 50%;
+    transform: translateX(-51%);
+    background-color: rgba(255, 255, 255, 0.0); /* Background color for better readability */
+    padding: 1px;
+    font-size: 14px;
+    color: black;
+    width: 100%;
+    text-align: center;
+}
+
+.image-box2 {
+    margin-top: 90px;
+    width: 350px;
+    height: 350px;
+    border: 2px solid rgba(255, 255, 255, 0);
+    overflow: hidden;
+    flex: 0 0 auto; /*to prevent flex items from growing or shrinking in a flex container*/
+}
+
+.image-box2 img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover; /* Maintain aspect ratio and cover the entire box */
+    border:2px;
+    transition: transform 0.3s ease; /* Add a smooth transition effect on hover */
+}
+
+.image-box2:hover img {
+    transform: scale(1.1); /* Zoom in slightly on hover */
+}
+
+.image-description2 {
+    position: absolute;
+    bottom: 110px;
+    left: 50%;
+    transform: translateX(-12.5%);
+    background-color: rgba(255, 255, 255, 0.0); /* Background color for better readability */
+    padding: 1px;
+    font-size: 14px;
+    color: black;
+    width: 100%;
+    text-align: center;
+}
+
+.image-box3 {
+    margin-top: 80px;
+    width: 350px;
+    height: 350px;
+    border: 2px solid rgba(255, 255, 255, 0);
+    overflow: hidden;
+    flex: 0 0 auto; /*to prevent flex items from growing or shrinking in a flex container*/ 
+}
+
+.image-box3 img {
+    width: 90%;
+    height: 90%;
+    object-fit:cover; /* Maintain aspect ratio and cover the entire box */
+    border:0px;
+    transition: transform 0.3s ease; /* Add a smooth transition effect on hover */
+}
+
+.image-box3:hover img {
+    transform: scale(1.1); /* Zoom in slightly on hover */
+}
+
+.image-description3 {
+    position: absolute;
+    bottom: -320px;
+    left: 50%;
+    transform: translateX(-90%);
+    background-color: rgba(255, 255, 255, 0.0); /* Background color for better readability */
+    padding: 1px;
+    font-size: 14px;
+    color: black;
+    width: 100%;
+    text-align: center;
+}
+
+
+.image-container1 {  /*a flex container that will arrange the child elements side by side which in this case are the image boxes*/
+    display: flex;
+    gap: 15%; /*the space between 2 products is 15% of the screen*/
+}
+
+.main-content{ /*to ensure the top margin of the child divs which contain product info and pics*/
+    margin-top: 10%;
+}
+
+.fixed-background { /*for the headers and navbars in the lv page*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 18%;
+    background-color: white;
+    z-index: 1000; /* Ensures the fixed background appears above other elements */
+}
+
+.image-box4 {
+    margin-top: 80px;
+    margin-left: 10px;
+    width: 350px;
+    height: 350px;
+    border: 2px solid rgba(255, 255, 255, 0);
+    overflow: hidden;
+    flex: 0 0 auto; /*to prevent flex items from growing or shrinking in a flex container*/ 
+}
+
+.image-box4 img {
+    width: 110%;
+    height: 105%;
+    object-fit:cover; /* Maintain aspect ratio and cover the entire box */
+    border:0px;
+    transition: transform 0.3s ease; /* Add a smooth transition effect on hover */
+}
+
+.image-box4:hover img {
+    transform: scale(1.1); /* Zoom in slightly on hover */
+}
+
+.image-description4 {
+    position: absolute;
+    bottom: -320px;
+    left: 50%;
+    transform: translateX(-51%);
+    background-color: rgba(255, 255, 255, 0.0); /* Background color for better readability */
+    padding: 1px;
+    font-size: 14px;
+    color: black;
+    width: 100%;
+    text-align: center;
+}
+
+
+.image-box5 {
+    margin-top: 90px;
+    margin-left: -50px;
+    width: 350px;
+    height: 350px;
+    border: 2px solid rgba(255, 255, 255, 0);
+    overflow: hidden;
+    text-align: center;
+    flex: 0 0 auto; /*to prevent flex items from growing or shrinking in a flex container*/ 
+    position:relative;
+}
+
+.image-box5 img {
+    width: 115%;
+    height: 110%;
+    object-fit:cover; /* Maintain aspect ratio and cover the entire box */
+    border:0px;
+    transition: transform 0.3s ease; /* Add a smooth transition effect on hover */
+}
+
+.image-box5:hover img {
+    transform: scale(1.1); /* Zoom in slightly on hover */
+}
+
+.image-description5 {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-40%);
+    background-color: rgba(255, 255, 255, 0.0); /* Background color for better readability */
+    padding: 1px;
+    font-size: 14px;
+    color: black;
+    width: 100%;
+    text-align: center;
+}
+
+
+.cartseperation{ /*a coloured div to showcase cart items*/
+    width:100%;
+    height:450px;
+    margin-top:131px;
+    background-color:gainsboro;
+}   
+
+.cart-text { /*for the text showcasing empty cart*/
+    color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 20px;
+    transform: translate(-50%, -50%); /*to center the text*/
+}
+
+.footer ul{ /*footer*/
+    font-family: sans-serif;
+    margin-top: 2%;
+    font-size: 12px;
+    list-style: none;
+    display:flex;
+    justify-content: space-around;
+    text-align: left;
+    z-index:10001;
+}
+
+.footer li{
+    display:inline-block;
+}
+
+.footer li:hover{
+    color:brown
+}
 
