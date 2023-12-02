@@ -1,41 +1,37 @@
 body { 
-    margin: 0;
-    padding: 0;
-    background: url(https://images.squarespace-cdn.com/content/v1/55f45174e4b0fb5d95b07f39/f2692796-38b3-473e-b3b6-f503a0668b28/Louis-Vuitton-Mens-2023-Ad-Campaign-Tyler-mitchell-00005.jpg) center/cover no-repeat fixed; 
+    background: url(https://images.squarespace-cdn.com/content/v1/55f45174e4b0fb5d95b07f39/f2692796-38b3-473e-b3b6-f503a0668b28/Louis-Vuitton-Mens-2023-Ad-Campaign-Tyler-mitchell-00005.jpg) center/cover no-repeat fixed; /*background image using link from the internet*/
     font-family: montserrat;
     overflow-x: hidden; /*ensure vertical scrolling doesnt happen*/
 }
 
 
 .navbar ul{
-    list-style: none;
-    background: rgba(255, 255, 255, 0); /* 0.5 is the alpha channel, adjust as needed */
+    background: transparent; /*transparent background for the navbar*/
     padding: 0;
-    margin: 0;
-    display:flex;
-    justify-content: space-around;
-    text-align:center;
+    margin: -10px;
+    display:flex; /*enables better modification*/
+    justify-content: space-around; /*creates equal spacing between list items*/
+    text-align:center; /*centers each list item in it's position*/
 }
 
 .navbar li{
-    display: inline-block;
+    display: inline-block; /*to have list items in horizontal format*/
 }
 
 .navbar a{
-    text-decoration: none;
+    text-decoration: none; /*removes the underline beneath list items*/
     color:black;
-    width: 100px;
-    display: block;
-    padding: 25px 20px;
+    display: block; /*to be able to set width and height for the elements*/
+    width: 100%; /*takes up the entire width of the display*/
+    padding: 25px;
     font-size: 15px;
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: center;
+    text-transform: uppercase; /*makes all the text uppercase*/
+    font-weight: bold; /*makes text bold*/
     transition: color 0.3s ease; /*the affect that shows the colour fade in when hovered over caused by the transition code*/
 }
 
 .navbar a:hover{
-    color:aliceblue;
+    color:aliceblue; /*colour of text when hover affect is implemented*/
 }
 
 header { /*Timeless treasures header*/
@@ -44,12 +40,12 @@ header { /*Timeless treasures header*/
     font-size: 40px;
     text-transform: uppercase;
     text-align: center;
-    position: fixed;
-    top: 30px;
-    left: 50%; /*to make sure it's in the middle*/
-    transform: translateX(-50%);
+    position: fixed; /*makes editing and modifying easier as it is in fixed position regardless of change*/
+    top: 30px; /*margin from the top of the display*/
+    left: 50%; /*to make sure it's in the middle (50% of the display width)*/
+    transform: translateX(-50%); /*centers the header within its container*/
     width: 100%; /* To make it span the full width of the page*/
-    height:100px;
+    height:100px; /*takes up 100px of the screen from the top*/
     z-index: 1001; /*ensures the headers appears above other elements so it's not overshadowed main concern was the lv navbars*/
 }
 
@@ -68,9 +64,8 @@ header { /*Timeless treasures header*/
  
 }
 
-
 .spacer{
-    width: 200px;
+    width: 200px; /*to create a space between list items*/
 }
 
 .spacerLV{ /*lv page spacer*/
@@ -79,25 +74,26 @@ header { /*Timeless treasures header*/
 
 button{
     font-size: 17px;
-    border-radius: 30px;
+    border-radius: 30px; /*to create rounded edges*/
     width: 15%;
     padding: 10px;
     border: none;
-    background-color:rgba(255, 255, 255, 0.4);
+    background-color:rgba(255, 255, 255, 0.4); 
     color: black;
-    position: absolute;
-    left: 50%;
-    top: 80%;
+    position: absolute; /*position of button doesnt change regardless of changing dimension sizes*/
+    left: 50%; 
+    top: 80%; /*drop to the lower 20% of the screen*/
     transform: translate(-50%, -50%);
 }
 
 /* the rectangle of brands*/
 .rectangle {
-    width: 20%;
-    height: 100%;
+    z-index: 2000; /*to ensure the header doesnt overlap this*/
+    width: 20%; /*takes up 20% of the display from the left*/
+    height: 100%; /*takes up the entire screen*/
     background-color: rgba(255, 255, 255, 0.55);  
     position: fixed;
-    top: 0;
+    top: 0; /*paired with the left:0 to ensure the rectangle starts from the beginnign of the top and left of the display*/
     left: 0;
     border-top-right-radius: 20px; /*adds the border radius to the top right of the div*/
     border-bottom-right-radius: 20px; /*adds the border radius to the bottom right of the div*/
@@ -111,27 +107,25 @@ button{
 }
 /*the unordered list for brands*/
 .rectangle ul {
-    list-style: none;
+    list-style: none; /*removes the predefined list item dots*/
     padding: 5px;
     margin: 0;
 }
 /* the affects for the menu extension brands*/
 .rectangle li {
     font-size: 20px;
-    display: block; /* Set to 'block' to make list items appear vertically */
-    margin-bottom: 20%; /* Optional: Add some margin between list items */
+    margin-bottom: 20%; /*the margin between items in the list*/
     margin-left: 30px;
 }
 .rectangle li:first-child { /*this is for the first list item in the list of rectangle*/
     font-size: 25px;
-    margin-top: 5px; /*No margin for the x icon which will be used to exit the menu and go back to index.html*/
-    margin-left: 20px; /*so that the exit x icon doesnt look so close to the display*/
+    margin-top: 5px; /*No margin for the icon which will be used to exit the menu and go back to index.html*/
+    margin-left: 20px; /*so that the exit icon doesnt look so close to the display*/
 }
 
-.rectangle a{
-    text-decoration: none;
+.rectangle a{ /*for items with the <a> tag*/
+    text-decoration: none; /*removes any predefined styling on the list items*/
     color:black;
-    width: 100px;
     transition: color 0.3s ease; /*affect of hover affect where the colour eases in*/
 }
 
@@ -140,7 +134,7 @@ button{
 }
 
 .navbarLV ul{  /*new class name for navbar in the lv product page mainly to change the colour of hovering*/
-    list-style: none;
+    list-style: none; /*remove any predefined styling*/
     background: rgba(255, 255, 255, 0); 
     padding: 0;
     margin: 0;
@@ -148,19 +142,18 @@ button{
     justify-content: space-around;
     text-align:center;
     background-color: white;
-    z-index: 1000; /*to make sure this appears*/
 }
 
 .navbarLV li{
-    display: inline-block;
+    display: inline-block; /*flow in a line and items wont start on new line*/
 }
 
-.navbarLV a{
-    text-decoration: none;
+.navbarLV a{ /*for all items using the <a> tag*/
+    text-decoration: none; /*removes predefined styling*/
     color:black;
-    width: 100px;
-    display: block;
-    padding: 25px 20px;
+    width: 100%;
+    display: block; 
+    padding: 25px;
     font-size: 15px;
     text-transform: uppercase;
     font-weight: bold;
@@ -169,7 +162,7 @@ button{
 }
 
 .navbarLV a:hover{
-    color:brown;
+    color:brown; /*brown because that's the iconic colour of LV*/
 }
 
 .navbar-cart ul{  /*new class name for navbar in the lv product page mainly to change the colour of hovering*/
@@ -181,19 +174,18 @@ button{
     justify-content: space-around;
     text-align:center;
     background-color: white;
-    z-index: 1000; /*to make sure this appears*/
 }
 
 .navbar-cart li{
-    display: inline-block;
+    display: inline-block; /*makes items align in line in a row and not start from a new line*/
 }
 
-.navbar-cart a{
+.navbar-cart a{ /*every navbar item in the a tag*/
     text-decoration: none;
     color:black;
     width: 100px;
     display: block;
-    padding: 25px 20px;
+    padding: 25px;
     font-size: 15px;
     text-transform: uppercase;
     font-weight: bold;
@@ -205,22 +197,21 @@ button{
     color:brown;
 }
 
-.itempagenavbar{
+.itempagenavbar{ /*navbar for the lower half of the lv page*/
     position:fixed;
     width:100%;
     background-color: transparent;
-    z-index: 1000; /*to make sure the contents appear above the background*/
 }
 
 .itempagenavbar ul{
     list-style: none;
     background: rgba(255, 255, 255, 0); 
     padding: 0;
-    margin-top:65px ;
+    margin-top:65px; /*margin from the top*/
     display:flex;
     justify-content: space-around;
     text-align:center;
-    border-bottom: 1px solid black; 
+    border-bottom: 1px solid black; /*to create a cool looking line below the list*/ 
 }
 
 .itempagenavbar li{
@@ -245,7 +236,7 @@ button{
     color:brown;
 }
 
-.itempagenavbar .arrow-down {
+.itempagenavbar .arrow-down { /*in order to create a arrow drop down icon*/
     display: inline-block;
     width: 0;
     height: 0;
@@ -269,8 +260,8 @@ button{
     margin-top: 77px;
     width: 350px;
     height: 350px;
-    border: 2px solid rgba(255, 255, 255, 0);
-    overflow: hidden;
+    padding:10px;
+    overflow:hidden; /*hides the overflown items if it does occur*/
     flex: 0 0 auto; /*to prevent flex items from growing or shrinking in a flex container*/
 }
 
@@ -278,20 +269,18 @@ button{
     width: 95%;
     height: 95%;
     object-fit: cover; /* Maintain aspect ratio and cover the entire box */
-    border:2px;
     transition: transform 0.3s ease; /* Add a smooth transition effect on hover */
 }
 
 .image-box:hover img {
-    transform: scale(1.1); /* Zoom in slightly on hover */
+    transform: scale(1.05); /* Zoom in 1.1 times original on hover */
 }
 
-.image-description {
+.image-description { /*the description of the item*/
     position: absolute;
     bottom: 110px;
     left: 50%;
     transform: translateX(-88%);
-    background-color: rgba(255, 255, 255, 0.0); /* Background color for better readability */
     padding: 1px;
     font-size: 14px;
     color: black;
@@ -312,12 +301,11 @@ button{
     width: 95%;
     height: 90%;
     object-fit: cover; /* Maintain aspect ratio and cover the entire box */
-    border:0px;
     transition: transform 0.3s ease; /* Add a smooth transition effect on hover */
 }
 
 .image-box1:hover img {
-    transform: scale(1.1); /* Zoom in slightly on hover */
+    transform: scale(1.05); /* Zoom in slightly on hover */
 }
 
 .image-description1 {
@@ -325,8 +313,6 @@ button{
     bottom: 110px;
     left: 50%;
     transform: translateX(-51%);
-    background-color: rgba(255, 255, 255, 0.0); /* Background color for better readability */
-    padding: 1px;
     font-size: 14px;
     color: black;
     width: 100%;
@@ -346,20 +332,18 @@ button{
     width: 90%;
     height: 90%;
     object-fit: cover; /* Maintain aspect ratio and cover the entire box */
-    border:2px;
     transition: transform 0.3s ease; /* Add a smooth transition effect on hover */
 }
 
 .image-box2:hover img {
-    transform: scale(1.1); /* Zoom in slightly on hover */
+    transform: scale(1.05); /* Zoom in slightly on hover */
 }
 
 .image-description2 {
     position: absolute;
     bottom: 110px;
     left: 50%;
-    transform: translateX(-12.5%);
-    background-color: rgba(255, 255, 255, 0.0); /* Background color for better readability */
+    transform: translateX(-12.5%); /*determines the position of the text on the x axis*/
     padding: 1px;
     font-size: 14px;
     color: black;
@@ -385,7 +369,7 @@ button{
 }
 
 .image-box3:hover img {
-    transform: scale(1.1); /* Zoom in slightly on hover */
+    transform: scale(1.05); /* Zoom in slightly on hover */
 }
 
 .image-description3 {
@@ -393,7 +377,6 @@ button{
     bottom: -320px;
     left: 50%;
     transform: translateX(-90%);
-    background-color: rgba(255, 255, 255, 0.0); /* Background color for better readability */
     padding: 1px;
     font-size: 14px;
     color: black;
@@ -409,16 +392,6 @@ button{
 
 .main-content{ /*to ensure the top margin of the child divs which contain product info and pics*/
     margin-top: 10%;
-}
-
-.fixed-background { /*for the headers and navbars in the cart page*/
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 18%;
-    background-color: white;
-    z-index: 1000; /* Ensures the fixed background appears above other elements */
 }
 
 .fixed-background-cart { /*for the headers and navbars in the cart page*/
@@ -446,7 +419,6 @@ button{
     margin-left: 10px;
     width: 350px;
     height: 350px;
-    border: 2px solid rgba(255, 255, 255, 0);
     overflow: hidden;
     flex: 0 0 auto; /*to prevent flex items from growing or shrinking in a flex container*/ 
 }
@@ -460,7 +432,7 @@ button{
 }
 
 .image-box4:hover img {
-    transform: scale(1.1); /* Zoom in slightly on hover */
+    transform: scale(1.05); /* Zoom in slightly on hover */
 }
 
 .image-description4 {
@@ -468,7 +440,6 @@ button{
     bottom: -320px;
     left: 50%;
     transform: translateX(-51%);
-    background-color: rgba(255, 255, 255, 0.0); /* Background color for better readability */
     padding: 1px;
     font-size: 14px;
     color: black;
@@ -482,7 +453,6 @@ button{
     margin-left: -50px;
     width: 350px;
     height: 350px;
-    border: 2px solid rgba(255, 255, 255, 0);
     overflow: hidden;
     text-align: center;
     flex: 0 0 auto; /*to prevent flex items from growing or shrinking in a flex container*/ 
@@ -498,7 +468,7 @@ button{
 }
 
 .image-box5:hover img {
-    transform: scale(1.1); /* Zoom in slightly on hover */
+    transform: scale(1.05); /* Zoom in slightly on hover */
 }
 
 .image-description5 {
@@ -506,8 +476,6 @@ button{
     bottom: -18px;
     left: 50%;
     transform: translateX(-40%);
-    background-color: rgba(255, 255, 255, 0.0); /* Background color for better readability */
-    padding: 1px;
     font-size: 14px;
     color: black;
     width: 100%;
@@ -515,7 +483,7 @@ button{
 }
 
 
-.cartseperation{ /*a coloured div to showcase cart items*/
+.cartseperation{ /*a coloured div to showcase cart items and create a seperation affect from the navigation bars*/
     width:100%;
     height:450px;
     margin-top:131px;
@@ -531,7 +499,7 @@ button{
     transform: translate(-50%, -50%); /*to center the text*/
 }
 
-.footer ul{ /*footer*/
+.footer-cart ul{ /*footer for the cart */
     font-family: sans-serif;
     margin-top: 2%;
     font-size: 12px;
@@ -542,11 +510,11 @@ button{
     z-index:10001;
 }
 
-.footer li{
+.footer-cart li{
     display:inline-block;
 }
 
-.footer li:hover{
+.footer-cart li:hover{
     color:brown
 }
 
